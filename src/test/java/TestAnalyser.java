@@ -1,11 +1,21 @@
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
 import org.junit.Test;
 
 import censusanalyser.StateCensusAnalyser;
 
 public class TestAnalyser {
+	StateCensusAnalyser analyser;
+
+	@Before
+	public void initialization() {
+		analyser = new StateCensusAnalyser();
+	}
+
 	@Test
-	public void testCensusAnalyser() {
-		StateCensusAnalyser analyser = new StateCensusAnalyser();
+	public void testRecordMatch() {
 		analyser.loadData();
+		assertEquals(true, analyser.checkData());
 	}
 }
