@@ -23,4 +23,8 @@ public class TestAnalyser {
 	public void testFileCheckSad() throws InvalidFile {
 		analyser.loadData("src/test/resources/IndiaStateCensus.csv");
 	}
+	@Test
+	public void testTypeCheckSad() throws InvalidFile {
+		analyser.loadData("src/test/resources/IndiaStateCensusDataWrong.csv");
+	}
 }
