@@ -32,5 +32,9 @@ public class TestAnalyser {
 	public void testDelimiterCheckSad() throws InvalidFile, InvalidDelimiter  {
 		analyser.loadData("src/test/resources/IndiaStateCensusDataWrongDeliminator.csv");
 	}
+	@Test
+	public void testHeaderCheckSad() throws InvalidFile, InvalidDelimiter {
+		analyser.loadData("src/test/resources/IndiaStateCensusData.csv");
+	}
 	
 }
