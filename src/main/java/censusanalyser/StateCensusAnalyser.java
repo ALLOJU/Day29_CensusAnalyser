@@ -13,13 +13,12 @@ public class StateCensusAnalyser {
 
 	/**
 	 * [1] Method to load the data and display as csv
-	 * 1. The CSVReader class is used to read a CSV file.
-	 *  The class provides CSVReader class constructor to parse a CSV file.
+	 * 1. The CSVReader class is used to read a CSV file. The class provides CSVReader class constructor to parse a CSV file.
 	 * 2. We are using a while loop to read the file line by line.
 	 * 3. We are adding the data to the list.
 	 * 4. Then we are using a advanced for loop to display the list.
 	 */
-	public void loadData() {
+	public void loadData(String filePath) throws InvalidFile { 
 
 		try {
 			//parsing a CSV file into CSVReader class constructor  
@@ -32,13 +31,9 @@ public class StateCensusAnalyser {
 						Double.parseDouble(record[3])));
 			}
 
-			for (CSVStateCensus data : censusData) {
-				System.out.println(data);
-			}
-
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new InvalidFile(" This was an invalid File");
 		} catch (CsvValidationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
